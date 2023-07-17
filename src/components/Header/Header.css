@@ -1,0 +1,23 @@
+.header__image {
+  width: calc(var(--index) * 36);
+  position: absolute;
+  left: 37vw;
+  top: 5vh
+}
+
+.header__container {
+  height: 100vh;
+}
+
+.header__main {
+  padding: 0 7vw;
+}
+
+.header__title {
+  position: absolute;
+  font-size: calc(var(--index) * 8);
+  width: min-content;
+  bottom: 12vh;
+  line-height: .9;
+  font-family: 'Outfit';
+}
