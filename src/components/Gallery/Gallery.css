@@ -1,0 +1,7 @@
+.gallery__left {
+  margin-top: calc(var(--gallery-gap) * 1.75);
+}
+
+.gallery__right {
+  margin: var(--gallery-gap) 0 0;
+}

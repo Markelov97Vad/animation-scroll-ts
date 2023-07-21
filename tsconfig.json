@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "gsap", "gsap/ScrollSmoother.min.js", "public/gsap", "public/gsap"  ]
 }

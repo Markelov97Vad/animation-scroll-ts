@@ -11,6 +11,7 @@
   --index: calc(1vw + 1vh);
   --color-header: #f4efec;
   --color-text: #cdc6c3;
+  --gallery-gap: calc(var(--index) * 10);
   background-image: url(./image/bg.jpg);
   color: #fafafa;
   font-family: 'Relewey';
