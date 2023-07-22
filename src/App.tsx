@@ -16,13 +16,15 @@ function App() {
   const content = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    ScrollSmoother.create({
-      wrapper: rootRef.current,
-      content: content.current,
-      smooth: 2.3,
-      smoothTouch: 0.4,
-      effects: true
-    })
+    if (ScrollTrigger.isTouch !== 1) {
+      ScrollSmoother.create({
+        wrapper: rootRef.current,
+        content: content.current,
+        smooth: 2.3,
+        // smoothTouch: 0.4,
+        effects: true
+      })
+    }
   }, [])
 
   
