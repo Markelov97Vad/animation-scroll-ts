@@ -1,15 +1,15 @@
-/* .gallery__left {
-  margin-top: calc(var(--gallery-gap) * 1.75);
-}
-
-.gallery__right {
-  margin: var(--gallery-gap) 0 0;
-} */
-
 .gallery__left {
 	margin-top: calc(var(--gallery-gap) * 1.75);
 }
 .gallery__right .gallery__item {
 	margin: 0;
 	margin-top: var(--gallery-gap);
+}
+
+@media screen and (max-width: 768px){
+
+  .gallery__right .gallery__item {
+    margin: 0;
+    margin-top: calc(var(--gallery-gap) - 10vh);
+  }
 }
