@@ -1,67 +1,66 @@
-import './Portfolio.css'
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import './Portfolio.css';
+
 import { portfolioList } from "../utils/portfolioList";
 import Wrapper from "../Wrapper/Wrapper";
 import TextBlog from "../TextBlog/TextBlog";
 import Gallery from "../Gallery/Gallery";
-import { RefObject, useEffect, useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger)
 
-
 function Portfolio() {
-  
-  const TextBlogRef = useRef<HTMLDivElement>(null);
-  const compRef = useRef<HTMLDivElement>(null);
-  // const TextBlogRef = useRef<HTMLInputElement | RefObject<HTMLDivElement> | null>(null);
-
   useEffect(() => {
-    let itemsL = gsap.utils.toArray(".gallery__left .gallery__item")
-    itemsL.forEach((elem) => {
-      gsap.fromTo(elem as [], 
-        {opacity: 0, x: -50 }, {
+    const itemsR: string[] = gsap.utils.toArray(".gallery__right .gallery__item");
+    const itemsL: string[] = gsap.utils.toArray(".gallery__left .gallery__item");
+
+    itemsR.forEach((elem) => {
+      gsap.fromTo(elem, 
+        { opacity: 0, x: 150}, {
         opacity: 1, x: 0,
         scrollTrigger: {
-          trigger: elem as [],
-          start: '-850',
-          end: '-100',
+          trigger: elem,
+          start: "top 95%",
+          end: "top 30%",
           scrub: true,
         }
       })
     })
-    let itemsR = gsap.utils.toArray(".gallery__right .gallery__item")
-    itemsR.forEach((elem) => {
-      gsap.fromTo(elem as [], 
-        {x: 40, opacity: 0}, {
+    itemsL.forEach((elem) => {
+      gsap.fromTo(elem, 
+        { opacity: 0, x: -300 }, {
         opacity: 1, x: 0,
         scrollTrigger: {
-          trigger: elem as [],
-          start: '-750',
-          end: 'top',
+          trigger: elem,
+          start: "top 110%",
+          end: "top 50%",
           scrub: true,
         }
       })
     })
   },[])
+
   return ( 
     <section className="portfolio">
       <div className="portfolio__wrapper">
         <Wrapper>
-          <article ref={compRef} className="portfolio__gallery">
-            <Gallery refComp={TextBlogRef} position="left" speed=".9">
+          <article className="portfolio__gallery">
+            <Gallery position="left" speed=".8">
 
               {portfolioList.map((el) => (
                 el.id <= 2 &&  <img className="gallery__item" key={el.id} src={el.projectFoto} alt="pic" />
               ))}
 
-              <TextBlog ref={TextBlogRef} />
+              <TextBlog />
 
               <img className="gallery__item" src={portfolioList[5].projectFoto} alt="pic" />
 
             </Gallery>
-            <Gallery refComp={TextBlogRef} position="right" speed="1.1">
+            <Gallery position="right" speed="1.1">
 
-              <TextBlog ref={TextBlogRef}/>
+              <TextBlog />
 
               {portfolioList.map((el) => (
                   (el.id > 2 && el.id <= 5) &&  <img className="gallery__item" key={el.id} src={el.projectFoto} alt="pic" />

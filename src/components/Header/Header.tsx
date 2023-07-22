@@ -1,10 +1,13 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
-import hero from '../../image/hero.png'
-import './Header.css'
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+
+import './Header.css'
+
+import hero from '../../image/hero.png'
 import Wrapper from '../Wrapper/Wrapper';
+
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 function Header() {
@@ -15,7 +18,6 @@ function Header() {
     gsap.fromTo(el, { opacity: 1 }, {
         opacity: 0, 
         scrollTrigger: {
-          // елемент в поле зрения
         trigger: el,
         start: 'center',
         end: '1400',

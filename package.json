@@ -19,8 +19,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "copy": "cp ./src/ScrollSmoother.js ./node_modules/gsap",
+    "start": "cp ./src/ScrollSmoother.js ./node_modules/gsap && react-scripts start",
+    "build": "cp ./src/ScrollSmoother.js ./node_modules/gsap && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
