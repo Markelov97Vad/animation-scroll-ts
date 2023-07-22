@@ -1,6 +1,7 @@
 .portfolio__gallery {
   display: flex;
   padding: calc(var(--index) * 8) 0;
+  column-gap: 30px;
 }
 
 .portfolio__gallery > * {
@@ -39,4 +40,16 @@
 
 .text-block__subtitle {
   line-height: 1.75;
+}
+
+@media screen and (max-width: 768px){
+  .portfolio__gallery {
+    column-gap: 20px;
+  }
+
+  .gallery__item {
+    max-width: calc(var(--index) * 15);
+    margin-bottom: calc(var(--gallery-gap) / 2);
+    
+  }
 }
