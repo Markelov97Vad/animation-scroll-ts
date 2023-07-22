@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+}
+
+.header__image {
+  width: calc(var(--index) * 36);
+  position: absolute;
+  left: 37vw;
+  top: 5vh;
+  z-index: -1;
+}
+
+
+.header__main {
+  padding: 0 7vw;
+}
+
+.header__title {
+  font-size: calc(var(--index) * 8);
+  position: absolute;
+  width: min-content;
+  bottom: 12vh;
+  line-height: .9;
+  font-family: 'Outfit';
+  /* will-change: transform; */
+}
+
+.header__main {
+  height: 100vh;
+}
+
+/* .wrapper {
+  height: 100vh;
+} */
+
+@media screen and (max-width: 768px) {
+  .header__title {
+    font-size: calc(var(--index) * 5);
+    bottom: 37vh;
+  }
+}

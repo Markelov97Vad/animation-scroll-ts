@@ -1,0 +1,3 @@
+.content, .header, .header__main, .gallery {
+  will-change: transform;
+}
