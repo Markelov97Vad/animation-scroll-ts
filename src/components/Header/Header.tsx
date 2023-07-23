@@ -1,14 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 import './Header.css'
 
 import hero from '../../image/hero.png'
 import Wrapper from '../Wrapper/Wrapper';
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+gsap.registerPlugin(ScrollTrigger, )
 
 function Header() {
   const headerRef = useRef<HTMLDivElement>(null);

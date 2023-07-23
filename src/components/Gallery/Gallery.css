@@ -6,9 +6,18 @@
 	margin-top: var(--gallery-gap);
 }
 
+.gallery__center {
+  margin: 0;
+	margin-top: var(--gallery-gap);
+}
+
 @media screen and (max-width: 768px){
 
   .gallery__right .gallery__item {
+    margin: 0;
+    margin-top: calc(var(--gallery-gap) - 10vh);
+  }
+  .gallery__center .gallery__item {
     margin: 0;
     margin-top: calc(var(--gallery-gap) - 10vh);
   }
