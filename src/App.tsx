@@ -15,6 +15,8 @@ function App() {
   const rootRef = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
 
+  const test = 'test test test'
+
   useLayoutEffect(() => {
       ScrollSmoother.create({
         wrapper: rootRef.current,
@@ -24,6 +26,16 @@ function App() {
         effects: true
       })
   }, [])
+
+  // useLayoutEffect(() => {
+  //     ScrollSmoother.create({
+  //       wrapper: rootRef.current,
+  //       content: content.current,
+  //       smooth: 2.3,
+  //       smoothTouch: 2,
+  //       effects: true
+  //     })
+  // }, [])
 
   
   return (
