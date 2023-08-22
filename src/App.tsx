@@ -25,6 +25,10 @@ function App() {
       })
   }, [])
 
+
+  console.log('Hello Wirld');
+  const test = 'test'
+  
   
   return (
     <div className="root" ref={rootRef}>
